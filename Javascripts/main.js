@@ -17,6 +17,11 @@ var translator = [
 ];
 
 function awesomeTranslator (language) {
-    
+   translator.forEach(prop in translator){
+       if(prop === document.getElementById('wordsNstuff').innerHTML){
+           var translatedText = doucment.getElementById('newWords');
+           translatedText.innerHTML = prop.value;
+       }
+   }
 
 }
