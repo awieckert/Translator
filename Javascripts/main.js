@@ -50,6 +50,16 @@
 // var germButton = document.getElementById("gb");
 // germButton.addEventListener("click", awesomeTranslator(germanObject));
 
+var germButton = document.getElementById("gb");
+
+germButton.addEventListener("click", function(){awesomeTranslator(germanObject)});
+
+
+
+// germButton.addEventListener("click", (event) => {
+//     awesomeTranslator(germanObject);
+// });
+
 var germanObject = {
     id: "German",
     we: "wir",
@@ -64,15 +74,31 @@ var germanObject = {
 };
 
 function awesomeTranslator (language) {
-    var currentTextArea = document.getElementById('wordsNstuff').innerHTML;
-    for(var prop in language){
-       if(currentTextArea.indexOf(prop) != -1){
-           var translatedText = document.getElementById('newWords');
-           translatedText.innerHTML += language[prop] + " ";
-       }
-   }
-
+    var currentTextArea = document.getElementById('wordsNstuff').value.trim();
+    var translatedText = document.getElementById('newWords');
+    console.log("currentTextarea: ", currentTextArea);
+    var currentTextArray = currentTextArea.split(' ');
+    console.log(currentTextArray);
+    currentTextArray.forEach(function (item) {
+        for(var prop in language){
+            if(item === prop) {
+                translatedText.value += language[prop] + " ";
+            }
+        }
+    });
+    // for(var prop in language){
+    //    if(currentTextArea.indexOf(prop) != -1){
+    //        translatedText.value += language[prop] + " ";
+    //    }
 }
-var germButton = document.getElementById("gb");
-germButton.addEventListener("click", function(){console.log("YAY!")});
-// germButton.addEventListener("click", function(){awesomeTranslator(germanObject)});
+
+
+// switch(e.target.id){
+//     case "spanish"
+
+// }
+// if(e.target.id === "spanish"){
+
+// }
+
+// germButton.addEventListener("click", function(){console.log("YAY!")});
