@@ -51,16 +51,19 @@
 // germButton.addEventListener("click", awesomeTranslator(germanObject));
 
 var germButton = document.getElementById("gb");
+let spanButton = document.getElementById('sb');
+let italButton = document.getElementById('ib');
 
 germButton.addEventListener("click", function(){awesomeTranslator(germanObject)});
-
+spanButton.addEventListener("click", function(){awesomeTranslator(spanishObject)});
+italButton.addEventListener("click", function(){awesomeTranslator(italianObject)});
 
 
 // germButton.addEventListener("click", (event) => {
 //     awesomeTranslator(germanObject);
 // });
 
-var germanObject = {
+const germanObject = {
     id: "German",
     we: "wir",
     wish: "wunsch",
@@ -73,32 +76,42 @@ var germanObject = {
     year: "jahr",
 };
 
+const spanishObject = {
+    id: "Spanish",
+    we: "nosotros",
+    wish: "deseo",
+    you: "tu",
+    a: "un",
+    merry: "alegre",
+    christmas: "navidad",
+    happy: "feliz",
+    new: "ano",
+    year: "nuevo",
+};
+
+const italianObject = {
+    id: "Italian",
+    we: "noi",
+    wish: "desiderio",
+    you: "tu",
+    a: "un",
+    merry: "allegro",
+    christmas: "natale",
+    happy: "felice",
+    new: "anno",
+    year: "nuovo",
+};
+
 function awesomeTranslator (language) {
-    var currentTextArea = document.getElementById('wordsNstuff').value.trim();
     var translatedText = document.getElementById('newWords');
-    console.log("currentTextarea: ", currentTextArea);
+    translatedText.value = "";
+    var currentTextArea = document.getElementById('wordsNstuff').value.trim();
     var currentTextArray = currentTextArea.split(' ');
-    console.log(currentTextArray);
     currentTextArray.forEach(function (item) {
         for(var prop in language){
-            if(item === prop) {
+            if(item.toLowerCase() === prop) {
                 translatedText.value += language[prop] + " ";
             }
         }
     });
-    // for(var prop in language){
-    //    if(currentTextArea.indexOf(prop) != -1){
-    //        translatedText.value += language[prop] + " ";
-    //    }
 }
-
-
-// switch(e.target.id){
-//     case "spanish"
-
-// }
-// if(e.target.id === "spanish"){
-
-// }
-
-// germButton.addEventListener("click", function(){console.log("YAY!")});
