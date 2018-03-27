@@ -7,7 +7,7 @@ h1 {
     color: rgb(255, 109, 25);
     margin: auto;
     font-size: 200px;
-    margin-top: 250px;
+    margin-top: 300px;
 }
 
 .main-container {
@@ -30,7 +30,8 @@ h1 {
 .textarea1 {
     width: 50%;
     margin: auto;
-    margin-top: -10px;
+    margin-top: -290px;
+    margin-bottom: 10px; 
     opacity: 0.7;
 }
 
